@@ -420,8 +420,11 @@ def catch_all(path):
         return redirect(url_for('serve_signup'))
 
 
+# if __name__ == "__main__":
+#     app.run(debug=config.DEBUG, port=int(os.getenv('PORT', 5000)))
 if __name__ == "__main__":
-    app.run(debug=config.DEBUG, port=int(os.getenv('PORT', 5000)))
+    import os
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)), debug=config.DEBUG)
 
 
 
