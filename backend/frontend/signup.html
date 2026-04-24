@@ -1,0 +1,256 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InterviewAI - Sign In</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-700 min-h-screen flex flex-col">
+  <nav class="sticky top-0 bg-white border-b border-gray-200 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="/" class="flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+              <polyline points="14 2 14 8 20 8" />
+              <path d="M8 13h2" />
+              <path d="M8 17h2" />
+              <path d="M14 13h2" />
+              <path d="M14 17h2" />
+            </svg>
+            <strong class="text-xl font-semibold text-gray-900 select-none">InterviewAI</strong>
+          </a>
+        </div>
+        <div class="flex items-center">
+          <button id="mobile-menu-button" aria-label="Toggle menu" aria-expanded="false" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600 md:hidden">
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <ul id="desktop-menu" class="hidden md:flex md:space-x-6 md:items-center md:text-base md:font-medium">
+             <li><a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Home</a></li>
+            <li><a href="about.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">About</a></li>
+            <li><a href="resume.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">features</a></li>
+            <!-- <li class="relative group">
+              <button aria-haspopup="true" aria-expanded="false" class="nav-link flex items-center space-x-1 text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
+                <span>Features</span>
+              </button>
+              <ul class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 z-50">
+               <li><a href="job-description.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600">Job Description Analysis</a></li>
+                <li><a href="question-generator.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600">Question Generator</a></li>
+                <li><a href="voice-answering.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600">Voice Answering</a></li>
+            
+              </ul>
+            </li> -->
+            <li><a href="benefits.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Benefits</a></li>
+            <li><a href="use-cases.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Use Cases</a></li>
+            <li><a href="faq.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">FAQ</a></li>
+            <li><a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Contact</a></li>
+          </ul>
+          <div class="hidden md:flex md:items-center md:space-x-2 md:ml-6">
+            <a href="signin.html" class="inline-block px-3 py-1.5 border border-blue-600 text-blue-600 rounded-md text-sm font-medium hover:bg-blue-50">Sign In</a>
+            <a href="signup.html" class="inline-block px-3 py-1.5 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700">Sign Up</a>
+          </div>
+      </ul>
+    </div>
+    </nav>
+  <title>
+   Create Account
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-white">
+  <div class="min-h-screen flex flex-col justify-center items-center px-4">
+   <img alt="Small image of a robot sitting at a desk with plants and a computer screen" class="mb-2" height="48" src="https://storage.googleapis.com/a1aa/image/f0fcef6a-c372-4f9b-9ffd-4ff8353a86de.jpg" width="64"/>
+   <h1 class="text-xl font-semibold mb-1">
+    Create an account
+   </h1>
+   <p class="text-gray-600 mb-6 text-sm">
+    Enter your information to create an account
+   </p>
+   <form action="#" class="w-full max-w-md bg-white border border-gray-200 rounded-lg p-6" method="POST">
+    <div class="flex gap-4 mb-4">
+     <div class="flex-1">
+      <label class="block text-sm font-medium mb-1" for="firstName">
+       First name
+      </label>
+      <input class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" id="firstName" name="firstName" placeholder="John" type="text"/>
+     </div>
+     <div class="flex-1">
+      <label class="block text-sm font-medium mb-1" for="lastName">
+       Last name
+      </label>
+      <input class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" id="lastName" name="lastName" placeholder="Doe" type="text"/>
+     </div>
+    </div>
+    <div class="mb-4">
+     <label class="block text-sm font-medium mb-1" for="email">
+      Email
+     </label>
+     <input class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" id="email" name="email" placeholder="name@example.com" type="email"/>
+    </div>
+    <div class="mb-4">
+     <label class="block text-sm font-medium mb-1" for="password">
+      Password
+     </label>
+     <input class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" id="password" name="password" type="password"/>
+    </div>
+    <div class="mb-4">
+     <label class="block text-sm font-medium mb-1" for="confirmPassword">
+      Confirm Password
+     </label>
+     <input class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500" id="confirmPassword" name="confirmPassword" type="password"/>
+    </div>
+    <div class="mb-6 flex items-center text-sm">
+     <input class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" id="terms" name="terms" type="checkbox"/>
+     <label class="ml-2 text-gray-700" for="terms">
+      I agree to the
+      <a class="text-blue-600 hover:underline" href="term-services.html">
+       Terms of Service
+      </a>
+      and
+      <a class="text-blue-600 hover:underline" href="privacy-policy.html">
+       Privacy Policy
+      </a>
+     </label>
+    </div>
+    <button class="w-full bg-black text-white py-3 rounded-md text-center font-medium hover:bg-gray-900 transition" type="submit">
+     Create Account
+    </button>
+   </form>
+   <p class="mt-6 text-gray-600 text-sm underline cursor-pointer">
+    Already have an account? Sign In
+   </p>
+  </div>
+  <body class="bg-white">
+ <title>Footer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+</head>
+<body class="bg-white">
+  <footer class="w-full border-t border-gray-200 mt-20">
+    <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center space-x-2 mb-3">
+          <i class="fas fa-file-alt text-blue-600 text-lg"></i>
+          <span class="font-semibold text-black text-base">InterviewAI</span>
+        </div>
+        <p class="text-gray-600 text-sm max-w-xs">
+          Transform your interview process with AI-powered question generation.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-bold text-black text-sm mb-3">PRODUCT</h3>
+        <ul class="text-gray-700 text-sm space-y-1">
+          <li><a href="job-description.html">Job Description Analysis</a></li>
+            <li><a href="question-generator.html">Question Generator</a></li>
+            <li><a href="voice-answering.html">Voice Answering</a></li>
+            
+      </div>
+      <div>
+        <h3 class="font-bold text-black text-sm mb-3">COMPANY</h3>
+        <ul class="text-gray-700 text-sm space-y-1">
+         <li><a href="about.html">About</a></li>
+          <li><a href="benefits.html">Benefits</a></li>
+          <li><a href="use-cases.html">Use Cases</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold text-black text-sm mb-3">CONNECT</h3>
+        <ul class="text-gray-700 text-sm space-y-1">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 pb-6 text-center text-gray-500 text-xs select-none">
+      © 2025 InterviewAI. All rights reserved.
+    </div>
+  </footer>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const signupForm = document.querySelector('form');
+
+  signupForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    const termsChecked = document.getElementById('terms').checked;
+
+    if (!firstName || !lastName || !email || !password || !confirmPassword) {
+      alert('Please fill in all fields');
+      return;
+    }
+    if (password !== confirmPassword) {
+      alert('Passwords do not match');
+      return;
+    }
+    if (!termsChecked) {
+      alert('You must agree to the terms and conditions');
+      return;
+    }
+
+    const submitButton = signupForm.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = 'Creating account...';
+
+    fetch('/api/signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        email,
+        password
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        alert('Signup successful! Please sign in.');
+        window.location.href = 'signin.html';
+      } else {
+        alert(data.message || 'Signup failed');
+      }
+    })
+    .catch(() => alert('Signup failed. Please try again.'))
+    .finally(() => {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Create Account';
+    });
+  });
+
+  // "Already have an account? Sign In"
+  const signInLink = document.querySelector('p.text-gray-600.text-sm.underline.cursor-pointer');
+  if (signInLink) {
+    signInLink.addEventListener('click', function() {
+      window.location.href = 'signin.html';
+    });
+  }
+});
+</script>
+ </body>
+</html>

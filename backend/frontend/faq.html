@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InterviewAI - FAQs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    /* Accordion icon rotation */
+    [data-accordion] summary::-webkit-details-marker {
+      display: none;
+    }
+    [data-accordion] summary:after {
+      content: "\f078";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      float: right;
+      transition: transform 0.3s ease;
+    }
+    [data-accordion][open] summary:after {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body class="bg-[#f5fbff] text-black">
+  <nav class="sticky top-0 bg-white border-b border-gray-200 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="/" class="flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+              <polyline points="14 2 14 8 20 8" />
+              <path d="M8 13h2" />
+              <path d="M8 17h2" />
+              <path d="M14 13h2" />
+              <path d="M14 17h2" />
+            </svg>
+            <strong class="text-xl font-semibold text-gray-900 select-none">InterviewAI</strong>
+          </a>
+        </div>
+        <div class="flex items-center">
+          <button id="mobile-menu-button" aria-label="Toggle menu" aria-expanded="false" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600 md:hidden">
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <ul id="desktop-menu" class="hidden md:flex md:space-x-6 md:items-center md:text-base md:font-medium">
+             <li><a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Home</a></li>
+            <li><a href="about.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">About</a></li>
+            <!-- <li class="relative group">
+              <button aria-haspopup="true" aria-expanded="false" class="nav-link flex items-center space-x-1 text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
+                <span>Features</span>
+              </button>
+              <ul class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 z-50">
+               <li><a href="job-description.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600">Job Description Analysis</a></li>
+                <li><a href="question-generator.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600">Question Generator</a></li>
+                <li><a href="voice-answering.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600">Voice Answering</a></li>
+            
+              </ul>
+            </li> -->
+            <li><a href="resume.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">features</a></li>
+            <li><a href="benefits.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Benefits</a></li>
+            <li><a href="use-cases.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Use Cases</a></li>
+            <li><a href="faq.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">FAQ</a></li>
+            <li><a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Contact</a></li>
+          </ul>
+          <div class="hidden md:flex md:items-center md:space-x-2 md:ml-6">
+            <a href="signin.html" class="inline-block px-3 py-1.5 border border-blue-600 text-blue-600 rounded-md text-sm font-medium hover:bg-blue-50">Sign In</a>
+            <a href="signup.html" class="inline-block px-3 py-1.5 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+        <button id="mobile-menu-button" aria-label="Toggle menu" aria-expanded="false" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-900">
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-1 border-t border-gray-200 bg-white">
+      <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100">Home</a>
+      <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100">About</a>
+      <details class="group">
+        <summary class="flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 cursor-pointer">
+          Features
+          <svg class="w-4 h-4 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="pl-4 mt-1 space-y-1">
+          <a href="job-description.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100">Job Description Analysis</a>
+          <a href="question-generator.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100">Question Generator</a>
+          <a href="voice-answering.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100">Voice Answering</a>
+        </div>
+      </details>
+      <a href="benefits.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100">Benefits</a>
+      <a href="use-cases.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100">Use Cases</a>
+      <a href="faq.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 bg-gray-100 rounded-md">FAQ</a>
+      <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100">Contact</a>
+      <div class="pt-2 border-t border-gray-200">
+        <a href="signin.html" class="block w-full text-center px-3 py-2 mb-2 border border-gray-700 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-100">Sign In</a>
+        <a href="signup.html" class="block w-full text-center px-3 py-2 bg-gray-900 text-white rounded-md text-sm font-medium hover:bg-gray-700">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-b from-[#e7f1ff] to-white py-12 mb-8">
+    <div class="max-w-4xl mx-auto text-center px-4">
+      <h1 class="text-4xl font-extrabold text-gray-900 mb-3">Frequently Asked Questions</h1>
+      <p class="text-lg text-gray-700 max-w-2xl mx-auto">Find answers to common questions about our AI-powered interview system</p>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="flex-grow max-w-4xl mx-auto px-4 w-full mb-16">
+    <div class="flex flex-col sm:flex-row justify-center space-x-0 sm:space-x-6 space-y-4 sm:space-y-0 mb-8">
+      <button data-tab-target="general" class="tab-btn px-4 py-2 rounded-md font-semibold text-gray-900 bg-gray-100 sm:bg-transparent sm:text-gray-700 sm:hover:text-gray-900 sm:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-900" aria-selected="true" role="tab" id="tab-general" tabindex="0">General</button>
+      <button data-tab-target="features" class="tab-btn px-4 py-2 rounded-md font-semibold text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-900" role="tab" id="tab-features" tabindex="-1">Features</button>
+      <button data-tab-target="technical" class="tab-btn px-4 py-2 rounded-md font-semibold text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-900" role="tab" id="tab-technical" tabindex="-1">Technical</button>
+    </div>
+
+    <!-- Tab panels -->
+    <section id="general" class="tab-panel" role="tabpanel" aria-labelledby="tab-general">
+      <div data-accordion class="space-y-4">
+        <details class="bg-white border border-gray-300 rounded-md shadow-sm" open>
+          <summary class="cursor-pointer select-none px-5 py-4 font-semibold text-black">What is the InterviewAI system?</summary>
+          <div class="px-5 pb-4 text-gray-800">
+            InterviewAI is an advanced artificial intelligence platform designed to conduct realistic mock interviews, generate relevant questions, and provide detailed feedback to help candidates prepare for job interviews.
+          </div>
+        </details>
+        <details class="bg-white border border-gray-300 rounded-md shadow-sm">
+          <summary class="cursor-pointer select-none px-5 py-4 font-semibold text-black">Who can benefit from using InterviewAI?</summary>
+          <div class="px-5 pb-4 text-gray-800">
+            InterviewAI is beneficial for job seekers at all levels, career changers, students preparing for internships, and even hiring managers looking to improve their interview techniques.
+          </div>
+        </details>
+        <details class="bg-white border border-gray-300 rounded-md shadow-sm">
+          <summary class="cursor-pointer select-none px-5 py-4 font-semibold text-black">How accurate is the AI in generating relevant questions?</summary>
+          <div class="px-5 pb-4 text-gray-800">
+            Our AI achieves 92% relevance based on user feedback, with questions tailored to specific job roles, industries, and experience levels using data from thousands of real interviews.
+          </div>
+        </details>
+        <details class="bg-white border border-gray-300 rounded-md shadow-sm">
+          <summary class="cursor-pointer select-none px-5 py-4 font-semibold text-black">Is my data secure when using InterviewAI?</summary>
+          <div class="px-5 pb-4 text-gray-800">
+            Absolutely. We use enterprise-grade encryption and comply with global data protection regulations. Your interview data is never shared with third parties.
+          </div>
+        </details>
+        <details class="bg-white border border-gray-300 rounded-md shadow-sm">
+          <summary class="cursor-pointer select-none px-5 py-4 font-semibold text-black">How do I get started with InterviewAI?</summary>
+          <div class="px-5 pb-4 text-gray-800">
+            Simply create an account, select your target job role and experience level, and you can start practicing immediately with our AI interviewer.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="features" class="tab-panel hidden" role="tabpanel" aria-labelledby="tab-features" tabindex="0">
+      <div data-accordion class="space-y-4">
+        <details class="bg-white border border-gray-300 rounded-md shadow-sm" open>
+          <summary class="cursor-pointer select-none px-5 py-4 font-semibold text-black">What interview types does InterviewAI support?</summary>
+          <div class="px-5 pb-4 text-gray-800">
+            Our system supports various interview formats including technical, behavioral, case study, and panel interviews across multiple industries and job levels.
+          </div>
+        </details>
+        <details class="bg-white border border-gray-300 rounded-md shadow-sm">
+          <summary class="cursor-pointer select-none px-5 py-4 font-semibold text-black">Does the system provide feedback on my answers?</summary>
+          <div class="px-5 pb-4 text-gray-800">
+            Yes, InterviewAI provides comprehensive feedback including content analysis, speech patterns, pacing, and suggestions for improvement after each mock interview.
+          </div>
+        </details>
+        <details class="bg-white border border-gray-300 rounded-md shadow-sm">
+          <summary class="cursor-pointer select-none px-5 py-4 font-semibold text-black">Can I customize the interview questions?</summary>
+          <div class="px-5 pb-4 text-gray-800">
+            Absolutely. You can customize by job title, company, specific skills, or even upload a job description for tailored questions.
+          </div>
+        </details>
+        <details class="bg-white border border-gray-300 rounded-md shadow-sm">
+          <summary class="cursor-pointer select-none px-5 py-4 font-semibold text-black">Is there a video recording feature?</summary>
+          <div class="px-5 pb-4 text-gray-800">
+            Yes, all practice interviews are recorded so you can review your performance, with AI analysis of your body language and facial expressions available in premium plans.
+          </div>
+        </details>
+        <details class="bg-white border border-gray-300 rounded-md shadow-sm">
+          <summary class="cursor-pointer select-none px-5 py-4 font-semibold text-black">Does InterviewAI support multiple languages?</summary>
+          <div class="px-5 pb-4 text-gray-800">
+            Currently we support English, Spanish, French, and German, with more languages coming soon.
+          </div>
+        </details>
+      </div>
+    </section>
+    <section id="technical" class="tab-panel hidden" role="tabpanel" aria-labelledby="tab-technical" tabindex="0">
+      <div data-accordion class="space-y-4">
+        <details class="bg-white border border-gray-300 rounded-md shadow-sm" open>
+          <summary class="cursor-pointer select-none px-5 py-4 font-semibold text-black">What browsers are supported?</summary>
+          <div class="px-5 pb-4 text-gray-800">
+            InterviewAI works on all modern browsers including Chrome, Firefox, Safari, and Edge with JavaScript enabled.
+          </div>
+        </details>
+        <details class="bg-white border border-gray-300 rounded-md shadow-sm">
+          <summary class="cursor-pointer select-none px-5 py-4 font-semibold text-black">What are the system requirements?</summary>
+          <div class="px-5 pb-4 text-gray-800">
+            You need a modern computer with a webcam and microphone. We recommend at least 4GB RAM and a stable internet connection (5Mbps minimum).
+          </div>
+        </details>
+        <details class="bg-white border border-gray-300 rounded-md shadow-sm">
+          <summary class="cursor-pointer select-none px-5 py-4 font-semibold text-black">Does it work on mobile devices?</summary>
+          <div class="px-5 pb-4 text-gray-800">
+            Yes, our responsive design works on smartphones and tablets, though we recommend larger screens for the best experience.
+          </div>
+        </details>
+        <details class="bg-white border border-gray-300 rounded-md shadow-sm">
+          <summary class="cursor-pointer select-none px-5 py-4 font-semibold text-black">How is the AI trained?</summary>
+          <div class="px-5 pb-4 text-gray-800">
+            Our AI models are trained on thousands of real interview transcripts and continuously improved with user feedback while maintaining strict privacy standards.
+          </div>
+        </details>
+        <details class="bg-white border border-gray-300 rounded-md shadow-sm">
+          <summary class="cursor-pointer select-none px-5 py-4 font-semibold text-black">What if I experience technical issues?</summary>
+          <div class="px-5 pb-4 text-gray-800">
+            Our support team is available 24/7 via chat and email, with an average response time of under 2 hours for technical issues.
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<body class="bg-white">
+  <footer class="w-full border-t border-gray-200 mt-20">
+    <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center space-x-2 mb-3">
+          <i class="fas fa-file-alt text-blue-600 text-lg"></i>
+          <span class="font-semibold text-black text-base">InterviewAI</span>
+        </div>
+        <p class="text-gray-600 text-sm max-w-xs">
+          Transform your interview process with AI-powered question generation.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-bold text-black text-sm mb-3">PRODUCT</h3>
+        <ul class="text-gray-700 text-sm space-y-1">
+         
+            <li><a href="features.html">Job Description Analysis</a></li>
+              <li><a href="features.html">Question Generator</a></li>
+            <li><a href="features.html">Question Answering</a></li>
+           
+      </div>
+      <div>
+        <h3 class="font-bold text-black text-sm mb-3">COMPANY</h3>
+        <ul class="text-gray-700 text-sm space-y-1">
+         <li><a href="about.html">About</a></li>
+          <li><a href="benefits.html">Benefits</a></li>
+          <li><a href="use-cases.html">Use Cases</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold text-black text-sm mb-3">CONNECT</h3>
+        <ul class="text-gray-700 text-sm space-y-1">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 pb-6 text-center text-gray-500 text-xs select-none">
+      © 2025 InterviewAI. All rights reserved.
+    </div>
+  </footer>
+  <script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+      const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+      mobileMenuButton.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('hidden');
+      mobileMenuButton.querySelectorAll('svg').forEach(svg => svg.classList.toggle('hidden'));
+    });
+
+    // Tabs functionality
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const target = button.getAttribute('data-tab-target');
+
+        tabButtons.forEach(btn => {
+          btn.classList.remove('bg-gray-100', 'text-gray-900');
+          btn.classList.add('text-gray-700', 'bg-transparent');
+          btn.setAttribute('aria-selected', 'false');
+          btn.setAttribute('tabindex', '-1');
+        });
+
+        tabPanels.forEach(panel => {
+          panel.classList.add('hidden');
+          panel.setAttribute('tabindex', '-1');
+        });
+
+        button.classList.add('bg-gray-100', 'text-gray-900');
+        button.classList.remove('text-gray-700', 'bg-transparent');
+        button.setAttribute('aria-selected', 'true');
+        button.setAttribute('tabindex', '0');
+
+        const activePanel = document.getElementById(target);
+        activePanel.classList.remove('hidden');
+        activePanel.setAttribute('tabindex', '0');
+        activePanel.focus();
+      });
+    });
+  </script>
+</body>
+</html>

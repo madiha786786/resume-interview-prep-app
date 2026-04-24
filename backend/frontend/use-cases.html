@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InterviewAI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .hero-section {
+      background: linear-gradient(to bottom, #e7f1ff, #ffffff);
+      padding: 60px 0;
+    }
+    
+    /* How It Works Section */
+    .how-it-works {
+      max-width: 1120px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+    .how-it-works h2 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #111827;
+    }
+    .how-it-works .subtitle {
+      font-size: 1.125rem;
+      color: #6b7280;
+      margin-bottom: 3rem;
+    }
+    .workflow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: nowrap;
+      margin-bottom: 3rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+    .step {
+      background: white;
+      border-radius: 0.75rem;
+      padding: 1.5rem 1.75rem;
+      width: 180px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      flex-shrink: 0;
+    }
+    .step .icon {
+      font-size: 2.5rem;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      user-select: none;
+    }
+    .icon.green {
+      background-color: #22c55e;
+    }
+    .icon.blue {
+      background-color: #2563eb;
+    }
+    .icon.purple {
+      background-color: #7c3aed;
+    }
+    .icon.orange {
+      background-color: #f97316;
+    }
+    .step h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin: 0;
+      color: #111827;
+    }
+    .step p {
+      font-size: 0.875rem;
+      color: #6b7280;
+      margin: 0;
+    }
+    .arrow {
+      font-size: 2rem;
+      color: #9ca3af;
+      user-select: none;
+      flex-shrink: 0;
+      align-self: center;
+    }
+
+    /* Features List */
+    .features {
+      max-width: 600px;
+      margin: 0 auto 3rem auto;
+      padding-left: 0;
+      text-align: left;
+      color: #374151;
+      font-size: 1rem;
+      list-style: none;
+    }
+    .features li {
+      margin-bottom: 1rem;
+      position: relative;
+      padding-left: 0;
+      line-height: 1.4;
+    }
+    .features li::before {
+      content: none;
+      position: static;
+      font-size: 0;
+      line-height: 0;
+    }
+    .features strong {
+      font-weight: 600;
+    }
+
+    /* CTA Button */
+    .cta-button {
+      display: inline-block;
+      font-weight: 600;
+      color: #2563eb;
+      text-decoration: none;
+      font-size: 1rem;
+      border: 1.5px solid #2563eb;
+      padding: 0.5rem 1.25rem;
+      border-radius: 0.375rem;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      user-select: none;
+    }
+    .cta-button:hover {
+      background-color: #2563eb;
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Features Cards Section */
+    .features-section {
+      max-width: 1120px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+    .features-header {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #111827;
+    }
+    .features-sub {
+      color: #6b7280;
+      margin-bottom: 2rem;
+      font-size: 1.125rem;
+    }
+    
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .card {
+      background: white;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      width: 300px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      user-select: none;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card-icon {
+      font-size: 2rem;
+      color: #2563eb;
+    }
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0;
+    }
+    .card-description {
+      color: #4b5563;
+      font-size: 1rem;
+      margin: 0;
+      flex-grow: 1;
+    }
+    .card a {
+      display: inline-block;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: 600;
+      border: 1.5px solid #2563eb;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      user-select: none;
+    }
+    .card a:hover {
+      background-color: #2563eb;
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Benefits Section */
+    .benefits-section {
+      max-width: 1120px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+    .section-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: #e0e7ff;
+      color: #4338ca;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      user-select: none;
+    }
+    .benefits-title {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #111827;
+    }
+    .benefits-subtitle {
+      color: #6b7280;
+      margin-bottom: 3rem;
+      font-size: 1.125rem;
+    }
+    .benefits-row {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .benefit-card {
+      background: white;
+      border-radius: 0.75rem;
+      border: 1px solid #e5e7eb;
+      padding: 2rem 1.5rem;
+      width: 320px;
+      box-shadow: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-align: center;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      cursor: default;
+    }
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+    }
+    .benefit-icon {
+      font-size: 2.5rem;
+      color: #2563eb;
+      user-select: none;
+    }
+    .benefit-title {
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin: 0;
+      color: #111827;
+    }
+    .benefit-description {
+      color: #6b7280;
+      font-size: 1rem;
+      margin: 0;
+      flex-grow: 1;
+    }
+    .learn-link {
+      color: #2563eb;
+      font-weight: 600;
+      text-decoration: none;
+      user-select: none;
+      transition: text-decoration 0.2s ease;
+    }
+    .learn-link:hover {
+      text-decoration: underline;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background-color: #2563eb;
+      color: white;
+      padding: 4rem 1rem;
+      text-align: center;
+      user-select: none;
+    }
+    .cta-section h2 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .cta-section p {
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-light-primary {
+      background-color: white;
+      color: #2563eb;
+      border: none;
+      padding: 0.75rem 1.75rem;
+      border-radius: 0.375rem;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .btn-light-primary:hover {
+      background-color: #e0e7ff;
+      color: #1e40af;
+      text-decoration: none;
+    }
+    .footer {
+      background-color: #ffffff;
+      padding: 20px 0;
+      border-top: 1px solid #ddd;
+    }
+    .dashboard-preview {
+      height: 100%;
+      background-color: #f8f9fa;
+      border: 1px solid #ccc;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #6c757d;
+      min-height: 250px;
+      user-select: none;
+    }
+    footer {
+      background-color: white;
+      border-top: 1px solid #e5e7eb;
+      padding: 3rem 1rem;
+      user-select: none;
+    }
+    .footer-container {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+    .footer-col {
+      flex: 1 1 200px;
+      min-width: 180px;
+    }
+    .footer-logo {
+      font-weight: 600;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #2563eb;
+      user-select: none;
+    }
+    .footer-logo-icon {
+      font-size: 1.5rem;
+    }
+    .footer-desc {
+      margin-top: 0.5rem;
+      color: #6b7280;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    .footer-col h6 {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #111827;
+      user-select: none;
+    }
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+    .footer-links a {
+      color: #4b5563;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: text-decoration 0.2s ease;
+      user-select: text;
+    }
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+    .footer-copy {
+      border-top: 1px solid #e5e7eb;
+      padding-top: 1rem;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #6b7280;
+      margin-top: 2rem;
+      user-select: none;
+    }
+    
+    /* Login Modal */
+    .login-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .login-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      width: 100%;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Login Modal -->
+  <div id="login-modal" class="login-modal hidden">
+    <div class="login-content">
+      <h2 class="text-2xl font-bold mb-6 text-center">Login to InterviewAI</h2>
+      <form id="login-form">
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 mb-2">Email</label>
+          <input type="email" id="email" class="w-full px-3 py-2 border rounded-md" required>
+        </div>
+        <div class="mb-6">
+          <label for="password" class="block text-gray-700 mb-2">Password</label>
+          <input type="password" id="password" class="w-full px-3 py-2 border rounded-md" required>
+        </div>
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">Login</button>
+      </form>
+      <p class="mt-4 text-center text-sm text-gray-600">
+        Don't have an account? <a href="signup.html" class="text-blue-600">Sign up</a>
+      </p>
+    </div>
+  </div>
+
+  <nav class="sticky top-0 bg-white border-b border-gray-200 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="/" class="flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+              <polyline points="14 2 14 8 20 8" />
+              <path d="M8 13h2" />
+              <path d="M8 17h2" />
+              <path d="M14 13h2" />
+              <path d="M14 17h2" />
+            </svg>
+            <strong class="text-xl font-semibold text-gray-900 select-none">InterviewAI</strong>
+          </a>
+        </div>
+        <div class="flex items-center">
+          <button id="mobile-menu-button" aria-label="Toggle menu" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600 md:hidden">
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <ul id="desktop-menu" class="hidden md:flex md:space-x-6 md:items-center md:text-base md:font-medium">
+            <li><a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Home</a></li>
+            <li><a href="about.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">About</a></li>
+            <li><a href="features.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Features</a></li>
+            <li><a href="benefits.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Benefits</a></li>
+            <li><a href="use-cases.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Use Cases</a></li>
+            <li><a href="faq.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">FAQ</a></li>
+            <li><a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Contact</a></li>
+          </ul>
+          <div class="hidden md:flex md:items-center md:space-x-2 md:ml-6">
+            <div id="auth-buttons">
+              <a href="signin.html" class="inline-block px-3 py-1.5 border border-blue-600 text-blue-600 rounded-md text-sm font-medium hover:bg-blue-50">Sign In</a>
+              <a href="signup.html" class="inline-block px-3 py-1.5 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700">Sign Up</a>
+            </div>
+            <div id="user-menu" class="hidden">
+              <button onclick="logout()" class="inline-block px-3 py-1.5 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700">Logout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200">
+      <ul class="px-2 pt-2 pb-3 space-y-1 text-base font-medium text-gray-700">
+        <li><a href="index.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">Home</a></li>
+        <li><a href="about.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">About</a></li>
+        <li><a href="features.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">Features</a></li>
+        <li><a href="benefits.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">Benefits</a></li>
+        <li><a href="use-cases.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">Use Cases</a></li>
+        <li><a href="faq.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">FAQ</a></li>
+        <li><a href="contact.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">Contact</a></li>
+        <li class="pt-2 flex space-x-2 px-3">
+          <div id="mobile-auth-buttons">
+            <a href="signin.html" class="flex-1 text-center px-3 py-2 border border-blue-600 text-blue-600 rounded-md text-sm font-medium hover:bg-blue-50">Sign In</a>
+            <a href="signup.html" class="flex-1 text-center px-3 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700">Sign Up</a>
+          </div>
+          <div id="mobile-user-menu" class="hidden">
+            <button onclick="logout()" class="w-full px-3 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700">Logout</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content (hidden by default, shown after login) -->
+  <div id="main-content" class="hidden">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col-reverse lg:flex-row items-center gap-10">
+          <div class="lg:w-1/2 text-center lg:text-left">
+            <h1 class="text-4xl font-extrabold text-gray-900 leading-tight">Transform Interviews with AI-Powered Question Generation</h1>
+            <p class="mt-4 text-gray-600 text-lg max-w-xl mx-auto lg:mx-0">
+              Revolutionize your interview preparation and recruitment processes with our advanced AI-powered tool. Generate customized interview questions in seconds.
+            </p>
+            <div class="mt-6 flex flex-col sm:flex-row sm:justify-start justify-center gap-4 max-w-xl mx-auto lg:mx-0">
+              <a href="features.html" class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-md shadow hover:bg-blue-700 transition text-center">Try Now </a>
+              <a href="about.html" class="inline-block px-6 py-3 border border-blue-600 text-blue-600 font-semibold rounded-md hover:bg-blue-50 transition text-center">Learn More</a>
+              <a href="contact.html" class="inline-block px-6 py-3 text-blue-600 font-semibold rounded-md hover:underline transition text-center">Contact Us</a>
+            </div>
+          </div>
+          <div class="lg:w-1/2 w-full max-w-lg">
+            <img src="images/dashboard-screenshot.png" alt="Dashboard preview" class="w-full h-auto" />
+          </div>
+        </div>
+      </div>  
+    </section>
+
+    <section class="how-it-works" aria-label="How It Works Section">
+      <h2>How It Works</h2>
+      <p class="subtitle">Upload job descriptions and resumes, and get customized interview questions in seconds.</p>
+      <div class="workflow" role="list" aria-label="Workflow steps">
+        <div class="step" role="listitem" tabindex="0">
+          <div class="icon green" aria-hidden="true">📄</div>
+          <h3>Job Description</h3>
+          <p>Upload or select template</p>
+        </div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="step" role="listitem" tabindex="0">
+          <div class="icon blue" aria-hidden="true">🤖</div>
+          <h3>AI Analysis</h3>
+          <p>Extract key requirements</p>
+        </div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="step" role="listitem" tabindex="0">
+          <div class="icon purple" aria-hidden="true">💬</div>
+          <h3>Question Generation</h3>
+          <p>Create tailored questions</p>
+        </div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="step" role="listitem" tabindex="0">
+          <div class="icon orange" aria-hidden="true">📄</div>
+          <h3>Answer Generation</h3>
+          <p>Improve your responses</p>
+        </div>
+      </div>
+      <ul class="features" aria-label="Features list">
+        <li><strong>Multiple File Formats</strong> – Support for PDF, DOCX, and other document formats.</li>
+        <li><strong>Diverse Question Types</strong> – Technical, Behavioral, Situational, and Competency-based.</li>
+        <li><strong>Adjustable Difficulty Levels</strong> – Easy, Medium, and Hard to match candidate experience.</li>
+      </ul>
+      <a href="about.html" class="cta-button" role="button">Learn More →</a>
+    </section>
+
+    <section class="features-section" aria-label="Powerful Features Section">
+      <div class="features-header">Powerful Features for Everyone</div>
+      <div class="features-sub">Tailored solutions for both job seekers and HR professionals.</div>
+      <div class="card-container">
+        <article class="card" tabindex="0" aria-label="Job Description Analysis feature">
+          <div class="card-icon" aria-hidden="true">📄</div>
+          <h3 class="card-title">Job Description Analysis</h3>
+          <p class="card-description">Upload and analyze key skills and requirements to start your preparation.</p>
+          <a href="features.html" role="button">Learn More →</a>
+        </article>
+        <article class="card" tabindex="0" aria-label="Question Generator feature">
+          <div class="card-icon" aria-hidden="true">💬</div>
+          <h3 class="card-title">Question Generator</h3>
+          <p class="card-description">Generate customized interview questions based on job descriptions and resumes.</p>
+          <a href="features.html" role="button">Learn More →</a>
+        </article>
+        <article class="card" tabindex="0" aria-label="Voice Answering feature">
+          <div class="card-icon" aria-hidden="true">⚡</div>
+          <h3 class="card-title"> Answer Generation</h3>
+          <p class="card-description"> Generate customized interview answers based on job descriptions and resumes.</p>
+          <a href="features.html" role="button">Learn More →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="benefits-section" aria-label="Benefits Section">
+      <span class="section-label">Benefits</span>
+      <h2 class="benefits-title">Why Choose Our System</h2>
+      <p class="benefits-subtitle">Discover how our AI-powered system transforms the interview process.</p>
+      <div class="benefits-row">
+        <article class="benefit-card" tabindex="0" aria-label="Benefit: Reduces Manual Effort">
+          <div class="benefit-icon" aria-hidden="true">⚡</div>
+          <h3 class="benefit-title">Reduces Manual Effort</h3>
+          <p class="benefit-description">Save hours of preparation time with automated question generation.</p>
+          <a href="features.html" class="learn-link" role="button">Learn more</a>
+        </article>
+        <article class="benefit-card" tabindex="0" aria-label="Benefit: Enhanced Efficiency">
+          <div class="benefit-icon" aria-hidden="true">📈</div>
+          <h3 class="benefit-title">Enhanced Efficiency</h3>
+          <p class="benefit-description">Streamline recruitment processes and make better hiring decisions.</p>
+          <a href="features.html" class="learn-link" role="button">Learn more</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-section" aria-label="Call to Action Section">
+      <h2>Ready to Transform Your Interviews?</h2>
+      <p>Start generating customized interview questions today and take your interview preparation to the next level.</p>
+      <div class="cta-buttons">
+        <a href="features.html" class="btn-light-primary" role="button">Try Question Generator</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Public Content (always visible) -->
+  <div id="public-content">
+    <!-- This content will be shown on about.html, features.html, and contact.html -->
+    <!-- The actual content for these pages should be in their respective HTML files -->
+  </div>
+
+  <footer class="w-full border-t border-gray-200 mt-20">
+    <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center space-x-2 mb-3">
+          <i class="fas fa-file-alt text-blue-600 text-lg"></i>
+          <span class="font-semibold text-black text-base">InterviewAI</span>
+        </div>
+        <p class="text-gray-600 text-sm max-w-xs">
+          Transform your interview process with AI-powered question generation.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-bold text-black text-sm mb-3">PRODUCT</h3>
+        <ul class="text-gray-700 text-sm space-y-1">
+          <li><a href="features.html">Job Description Analysis</a></li>
+          <li><a href="features.html">Question Generator</a></li>
+          <li><a href="features.html">Question Answering</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold text-black text-sm mb-3">COMPANY</h3>
+        <ul class="text-gray-700 text-sm space-y-1">
+          <li><a href="about.html">About</a></li>
+          <li><a href="benefits.html">Benefits</a></li>
+          <li><a href="use-cases.html">Use Cases</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold text-black text-sm mb-3">CONNECT</h3>
+        <ul class="text-gray-700 text-sm space-y-1">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 pb-6 text-center text-gray-500 text-xs select-none">
+      © 2025 InterviewAI. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Check if user is logged in
+    function checkAuth() {
+      // In a real app, you would check session or token
+      return localStorage.getItem('isLoggedIn') === 'true';
+    }
+
+    // Show/hide content based on auth status
+    function toggleContentVisibility() {
+      const isLoggedIn = checkAuth();
+      const mainContent = document.getElementById('main-content');
+      const loginModal = document.getElementById('login-modal');
+      const currentPage = window.location.pathname.split('/').pop();
+      const publicPages = ['about.html', 'features.html', 'contact.html'];
+      
+      if (isLoggedIn) {
+        if (mainContent) mainContent.classList.remove('hidden');
+        if (loginModal) loginModal.classList.add('hidden');
+      } else {
+        // Show login modal only if not on a public page
+        if (mainContent && !publicPages.includes(currentPage)) {
+          mainContent.classList.add('hidden');
+          if (loginModal) loginModal.classList.remove('hidden');
+        }
+      }
+    }
+
+    // Update navigation based on auth status
+    function updateNavAuthState() {
+      const isLoggedIn = checkAuth();
+      const authButtons = document.getElementById('auth-buttons');
+      const userMenu = document.getElementById('user-menu');
+      const mobileAuthButtons = document.getElementById('mobile-auth-buttons');
+      const mobileUserMenu = document.getElementById('mobile-user-menu');
+      
+      if (isLoggedIn) {
+        if (authButtons) authButtons.classList.add('hidden');
+        if (userMenu) userMenu.classList.remove('hidden');
+        if (mobileAuthButtons) mobileAuthButtons.classList.add('hidden');
+        if (mobileUserMenu) mobileUserMenu.classList.remove('hidden');
+      } else {
+        if (authButtons) authButtons.classList.remove('hidden');
+        if (userMenu) userMenu.classList.add('hidden');
+        if (mobileAuthButtons) mobileAuthButtons.classList.remove('hidden');
+        if (mobileUserMenu) mobileUserMenu.classList.add('hidden');
+      }
+    }
+
+    // Handle login form submission
+    document.getElementById('login-form')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // In a real app, you'd validate credentials with your backend
+      localStorage.setItem('isLoggedIn', 'true');
+      toggleContentVisibility();
+      updateNavAuthState();
+      window.location.reload(); // Refresh to show all content
+    });
+
+    // Handle logout
+    function logout() {
+      localStorage.removeItem('isLoggedIn');
+      toggleContentVisibility();
+      updateNavAuthState();
+      window.location.href = 'index.html'; // Redirect to home
+    }
+
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton?.addEventListener('click', () => {
+      const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+      mobileMenuButton.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('hidden');
+      mobileMenuButton.querySelectorAll('svg').forEach(svg => svg.classList.toggle('hidden'));
+    });
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      toggleContentVisibility();
+      updateNavAuthState();
+    });
+  </script>
+</body>
+</html>

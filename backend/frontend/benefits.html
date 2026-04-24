@@ -1,0 +1,436 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InterviewAI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    @supports not (gap: 1rem) {
+      .d-flex.gap-3 > *:not(:last-child) {
+        margin-right: 1rem;
+      }
+      .d-flex.gap-2 > *:not(:last-child) {
+        margin-right: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-700">
+  <nav class="sticky top-0 bg-white border-b border-gray-200 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="/" class="flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+              <polyline points="14 2 14 8 20 8" />
+              <path d="M8 13h2" />
+              <path d="M8 17h2" />
+              <path d="M14 13h2" />
+              <path d="M14 17h2" />
+            </svg>
+            <strong class="text-xl font-semibold text-gray-900 select-none">InterviewAI</strong>
+          </a>
+        </div>
+        <div class="flex items-center">
+          <button id="mobile-menu-button" aria-label="Toggle menu" aria-expanded="false" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600 md:hidden">
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <ul id="desktop-menu" class="hidden md:flex md:space-x-6 md:items-center md:text-base md:font-medium">
+            <li><a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Home</a></li>
+            <li><a href="about.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">About</a></li>
+             <li><a href="resume.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">features</a></li>
+            <li><a href="benefits.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Benefits</a></li>
+            <li><a href="use-cases.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Use Cases</a></li>
+            <li><a href="faq.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">FAQ</a></li>
+            <li><a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Contact</a></li>
+          </ul>
+          <div class="hidden md:flex md:items-center md:space-x-2 md:ml-6">
+            <a href="signin.html" class="inline-block px-3 py-1.5 border border-blue-600 text-blue-600 rounded-md text-sm font-medium hover:bg-blue-50">Sign In</a>
+            <a href="signup.html" class="inline-block px-3 py-1.5 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200">
+      <ul class="px-2 pt-2 pb-3 space-y-1 text-base font-medium text-gray-700">
+        <li><a href="index.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">Home</a></li>
+        <li><a href="about.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">About</a></li>
+        <li><a href="features.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">Features</a></li>
+        <li><a href="benefits.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">Benefits</a></li>
+        <li><a href="use-cases.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">Use Cases</a></li>
+        <li><a href="faq.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">FAQ</a></li>
+        <li><a href="contact.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">Contact</a></li>
+        <li class="pt-2 flex space-x-2 px-3">
+          <a href="signin.html" class="flex-1 text-center px-3 py-2 border border-blue-600 text-blue-600 rounded-md text-sm font-medium hover:bg-blue-50">Sign In</a>
+          <a href="signup.html" class="flex-1 text-center px-3 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700">Sign Up</a>
+        </li>
+      </ul>
+    </div>
+
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileFeaturesButton = document.getElementById('mobile-features-button');
+    const mobileFeaturesSubmenu = document.getElementById('mobile-features-submenu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+      mobileMenuButton.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('hidden');
+      mobileMenuButton.querySelectorAll('svg').forEach(svg => svg.classList.toggle('hidden'));
+    });
+
+    mobileFeaturesButton.addEventListener('click', () => {
+      const expanded = mobileFeaturesButton.getAttribute('aria-expanded') === 'true' || false;
+      mobileFeaturesButton.setAttribute('aria-expanded', !expanded);
+      mobileFeaturesSubmenu.classList.toggle('hidden');
+    });
+  </script>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="py-16" style="background: linear-gradient(to bottom, #e7f1ff, #ffffff);">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 md:px-8 text-center">
+      <h1 class="text-4xl font-extrabold mb-3 text-gray-900">
+        Benefits
+      </h1>
+      <p class="text-lg text-gray-700 mx-auto max-w-xl">
+        Discover how our AI-powered interview system can transform your interview preparation and hiring process.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-3 sm:px-6 md:px-8 py-12">
+    <!-- For Job Seekers Section -->
+    <section class="flex flex-col md:flex-row items-center mb-20 gap-8">
+      <div class="md:w-1/2 order-2 md:order-1">
+        <h2 class="text-3xl font-bold mb-4">For Job Seekers</h2>
+        <p class="text-gray-600 mb-6">
+          Our AI-powered interview preparation system helps job seekers practice more effectively, build confidence, and perform better in real interviews.
+        </p>
+        <div class="flex flex-col gap-6">
+          <div class="flex items-start gap-3">
+            <svg class="flex-shrink-0 mt-1" width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke-opacity="0.2"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Realistic Practice</h3>
+              <p class="text-sm text-gray-600">Practice with questions tailored to specific job descriptions and industries.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="flex-shrink-0 mt-1" width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke-opacity="0.2"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Detailed Feedback</h3>
+              <p class="text-sm text-gray-600">Receive AI-powered feedback on your responses to improve your delivery and content.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="flex-shrink-0 mt-1" width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke-opacity="0.2"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Build Confidence</h3>
+              <p class="text-sm text-gray-600">Practice regularly to build confidence and reduce interview anxiety.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="md:w-1/2 order-1 md:order-2">
+        <img src="https://storage.googleapis.com/a1aa/image/e06d3bfe-f72a-49b4-f821-525522f0848d.jpg" alt="Job seeker benefits image showing a young professional practicing interview questions in a modern office" class="rounded-lg shadow-lg w-full" />
+      </div>
+    </section>
+
+    <!-- For HR Professionals Section -->
+    <section class="flex flex-col md:flex-row items-center mb-20 gap-8">
+      <div class="md:w-1/2 order-2 md:order-2">
+        <h2 class="text-3xl font-bold mb-4">For HR Professionals</h2>
+        <p class="text-gray-600 mb-6">
+          Streamline your interview process, ensure consistency, and make better hiring decisions with our AI-powered system.
+        </p>
+        <div class="flex flex-col gap-6">
+          <div class="flex items-start gap-3">
+            <svg class="flex-shrink-0 mt-1" width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke-opacity="0.2"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Standardized Process</h3>
+              <p class="text-sm text-gray-600">Create consistent interview experiences for all candidates with standardized question sets.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="flex-shrink-0 mt-1" width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke-opacity="0.2"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Time Savings</h3>
+              <p class="text-sm text-gray-600">Reduce time spent on interview preparation with automated question generation.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="flex-shrink-0 mt-1" width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke-opacity="0.2"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Better Hiring Decisions</h3>
+              <p class="text-sm text-gray-600">Comprehensive question sets help you assess candidates more thoroughly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="md:w-1/2 order-1 md:order-1">
+        <img src="https://storage.googleapis.com/a1aa/image/7bd15bfb-f466-4771-cfa5-290447e74547.jpg" alt="HR professional benefits image showing a recruiter reviewing candidate profiles on a computer screen" class="rounded-lg shadow-lg w-full" />
+      </div>
+    </section>
+
+    <!-- Key Benefits Section -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-bold text-center mb-12">Key Benefits</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="flex">
+          <div class="p-6 shadow rounded-lg w-full">
+            <div class="rounded-full bg-blue-600 bg-opacity-10 flex items-center justify-center mb-4" style="width:48px; height:48px;">
+              <svg class="text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Time Efficiency</h3>
+            <p class="text-gray-600">Save hours of preparation time with automated question generation and practice tools.</p>
+          </div>
+        </div>
+        <div class="flex">
+          <div class="p-6 shadow rounded-lg w-full">
+            <div class="rounded-full bg-blue-600 bg-opacity-10 flex items-center justify-center mb-4" style="width:48px; height:48px;">
+              <svg class="text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Performance Analytics</h3>
+            <p class="text-gray-600">Track progress over time with detailed analytics on your interview performance.</p>
+          </div>
+        </div>
+        <div class="flex">
+          <div class="p-6 shadow rounded-lg w-full">
+            <div class="rounded-full bg-blue-600 bg-opacity-10 flex items-center justify-center mb-4" style="width:48px; height:48px;">
+              <svg class="text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Targeted Preparation</h3>
+            <p class="text-gray-600">Focus your preparation on the specific skills and requirements of the job you're applying for.</p>
+          </div>
+        </div>
+        <div class="flex">
+          <div class="p-6 shadow rounded-lg w-full">
+            <div class="rounded-full bg-blue-600 bg-opacity-10 flex items-center justify-center mb-4" style="width:48px; height:48px;">
+              <svg class="text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Collaboration</h3>
+            <p class="text-gray-600">Share question sets and collaborate with team members on interview preparation.</p>
+          </div>
+        </div>
+        <div class="flex">
+          <div class="p-6 shadow rounded-lg w-full">
+            <div class="rounded-full bg-blue-600 bg-opacity-10 flex items-center justify-center mb-4" style="width:48px; height:48px;">
+              <svg class="text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Data Security</h3>
+            <p class="text-gray-600">Your data is secure with enterprise-grade encryption and privacy controls.</p>
+          </div>
+        </div>
+        <div class="flex">
+          <div class="p-6 shadow rounded-lg w-full">
+            <div class="rounded-full bg-blue-600 bg-opacity-10 flex items-center justify-center mb-4" style="width:48px; height:48px;">
+              <svg class="text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Continuous Improvement</h3>
+            <p class="text-gray-600">Our AI system continuously learns and improves to provide better questions and feedback.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reduces Manual Effort Section -->
+    <section class="flex flex-col md:flex-row items-center mb-20 gap-8">
+      <div class="md:w-1/2 order-2 md:order-1">
+        <h2 class="text-3xl font-bold mb-4">Reduces Manual Effort</h2>
+        <p class="text-gray-600 mb-6">
+          Our AI-powered system automates the most time-consuming aspects of interview preparation, freeing you to focus on what matters most.
+        </p>
+        <div class="flex flex-col gap-6">
+          <div class="flex items-start gap-3">
+            <svg class="flex-shrink-0 mt-1" width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke-opacity="0.2"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Automated Question Generation</h3>
+              <p class="text-sm text-gray-600">Generate relevant questions in seconds instead of spending hours researching.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="flex-shrink-0 mt-1" width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke-opacity="0.2"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Instant Feedback</h3>
+              <p class="text-sm text-gray-600">Receive immediate feedback on your responses without needing a practice partner.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="flex-shrink-0 mt-1" width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke-opacity="0.2"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Organized Question Library</h3>
+              <p class="text-sm text-gray-600">Automatically categorize and store questions for future reference.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="md:w-1/2 order-1 md:order-2">
+        <img src="https://storage.googleapis.com/a1aa/image/45774956-db9d-4d1b-4888-0d7504fe6ad5.jpg" alt="Reduce manual effort image showing a person using a tablet with AI interview tools" class="rounded-lg shadow-lg w-full" />
+      </div>
+    </section>
+
+    <!-- Enhanced Efficiency Section -->
+    <section class="flex flex-col md:flex-row items-center mb-20 gap-8">
+      <div class="md:w-1/2 order-2 md:order-2">
+        <h2 class="text-3xl font-bold mb-4">Enhanced Efficiency</h2>
+        <p class="text-gray-600 mb-6">
+          Streamline your interview process from preparation to feedback, making the entire experience more efficient and effective.
+        </p>
+        <div class="flex flex-col gap-6">
+          <div class="flex items-start gap-3">
+            <svg class="flex-shrink-0 mt-1" width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke-opacity="0.2"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Streamlined Workflow</h3>
+              <p class="text-sm text-gray-600">Integrated tools for question generation, practice, and feedback in one platform.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="flex-shrink-0 mt-1" width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke-opacity="0.2"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Faster Preparation</h3>
+              <p class="text-sm text-gray-600">Reduce preparation time by up to 70% with AI-generated questions and answers.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="flex-shrink-0 mt-1" width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke-opacity="0.2"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Better Resource Allocation</h3>
+              <p class="text-sm text-gray-600">Focus your time and energy on improving your responses rather than finding questions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="md:w-1/2 order-1 md:order-1">
+        <img src="https://storage.googleapis.com/a1aa/image/51f67de2-8ebc-45cb-5752-31355a756ddb.jpg" alt="Enhanced efficiency image showing a team collaborating in a modern office with digital tools" class="rounded-lg shadow-lg w-full" />
+      </div>
+    </section>
+    <div class="text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Interviews?</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-6">
+                Start generating customized interview questions today and take your interview preparation to the next level.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="features.html" class="px-8 py-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 flex items-center gap-2 justify-center">
+                    Try Question Generator <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<body class="bg-white">
+  <footer class="w-full border-t border-gray-200 mt-20">
+    <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center space-x-2 mb-3">
+          <i class="fas fa-file-alt text-blue-600 text-lg"></i>
+          <span class="font-semibold text-black text-base">InterviewAI</span>
+        </div>
+        <p class="text-gray-600 text-sm max-w-xs">
+          Transform your interview process with AI-powered question generation.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-bold text-black text-sm mb-3">PRODUCT</h3>
+        <ul class="text-gray-700 text-sm space-y-1">
+         
+            <li><a href="features.html">Job Description Analysis</a></li>
+              <li><a href="features.html">Question Generator</a></li>
+            <li><a href="features.html">Question Answering</a></li>
+           
+      </div>
+      <div>
+        <h3 class="font-bold text-black text-sm mb-3">COMPANY</h3>
+        <ul class="text-gray-700 text-sm space-y-1">
+         <li><a href="about.html">About</a></li>
+          <li><a href="benefits.html">Benefits</a></li>
+          <li><a href="use-cases.html">Use Cases</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold text-black text-sm mb-3">CONNECT</h3>
+        <ul class="text-gray-700 text-sm space-y-1">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 pb-6 text-center text-gray-500 text-xs select-none">
+      © 2025 InterviewAI. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
+
+
+

@@ -1,0 +1,374 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InterviewAI About</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-700">
+  <nav class="sticky top-0 bg-white border-b border-gray-200 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="/" class="flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+              <polyline points="14 2 14 8 20 8" />
+              <path d="M8 13h2" />
+              <path d="M8 17h2" />
+              <path d="M14 13h2" />
+              <path d="M14 17h2" />
+            </svg>
+            <strong class="text-xl font-semibold text-gray-900 select-none">InterviewAI</strong>
+          </a>
+        </div>
+        <div class="flex items-center">
+          <button id="mobile-menu-button" aria-label="Toggle menu" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600 md:hidden">
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <ul id="desktop-menu" class="hidden md:flex md:space-x-6 md:items-center md:text-base md:font-medium">
+            <li><a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Home</a></li>
+            <li><a href="about.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">About</a></li>
+              <li><a href="resume.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">features</a></li>
+            <li><a href="benefits.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Benefits</a></li>
+            <li><a href="use-cases.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Use Cases</a></li>
+            <li><a href="faq.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">FAQ</a></li>
+            <li><a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Contact</a></li>
+          </ul>
+          <div class="hidden md:flex md:items-center md:space-x-2 md:ml-6">
+            <a href="signin.html" class="inline-block px-3 py-1.5 border border-blue-600 text-blue-600 rounded-md text-sm font-medium hover:bg-blue-50">Sign In</a>
+            <a href="signup.html" class="inline-block px-3 py-1.5 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200">
+      <ul class="px-2 pt-2 pb-3 space-y-1 text-base font-medium text-gray-700">
+        <li><a href="index.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">Home</a></li>
+        <li><a href="about.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">About</a></li>
+         <li><a href="features.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Features</a></li>
+        <li><a href="benefits.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">Benefits</a></li>
+        <li><a href="use-cases.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">Use Cases</a></li>
+        <li><a href="faq.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">FAQ</a></li>
+        <li><a href="contact.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">Contact</a></li>
+        <li class="pt-2 flex space-x-2 px-3">
+          <a href="signin.html" class="flex-1 text-center px-3 py-2 border border-blue-600 text-blue-600 rounded-md text-sm font-medium hover:bg-blue-50">Sign In</a>
+          <a href="signup.html" class="flex-1 text-center px-3 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700">Sign Up</a>
+        </li>
+      </ul>
+    </div>
+
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileFeaturesButton = document.getElementById('mobile-features-button');
+    const mobileFeaturesSubmenu = document.getElementById('mobile-features-submenu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+      mobileMenuButton.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('hidden');
+      mobileMenuButton.querySelectorAll('svg').forEach(svg => svg.classList.toggle('hidden'));
+    });
+
+    mobileFeaturesButton.addEventListener('click', () => {
+      const expanded = mobileFeaturesButton.getAttribute('aria-expanded') === 'true' || false;
+      mobileFeaturesButton.setAttribute('aria-expanded', !expanded);
+      mobileFeaturesSubmenu.classList.toggle('hidden');
+    });
+  </script>
+  </nav>
+
+  <main>
+    <section class="hero-section flex justify-center bg-gradient-to-b from-[#e7f1ff] to-white py-16 w-full">
+      <div class="text-center max-w-3xl px-4 sm:px-6 lg:px-8 w-full">
+        <h1 class="text-4xl font-extrabold tracking-tight leading-tight text-gray-900">
+          About Our System
+        </h1>
+        <p class="mt-4 text-gray-600 text-lg">
+          Learn how our AI-powered interview question generation system works and the technology behind it.
+        </p>
+      </div>
+    </section>
+    <section class="mt-20 flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:w-1/2 max-w-lg">
+        <h2 class="text-2xl font-extrabold mb-4 text-gray-900">Our Mission</h2>
+        <p class="text-gray-700 mb-4">
+          At InterviewAI, we're on a mission to transform the interview process for both job seekers and hiring teams. We believe that interviews should be fair, efficient, and focused on finding the right match between candidates and positions.
+        </p>
+        <p class="text-gray-700 mb-6">
+          Our AI-powered system helps job seekers prepare more effectively while enabling HR professionals to create consistent, comprehensive interview processes that identify the best talent.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="features.html" class="inline-flex items-center justify-center bg-black text-white px-5 py-2 rounded-md text-sm font-normal hover:bg-gray-800 transition">
+            Explore Features
+            <svg aria-hidden="true" class="ml-2 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+          <a href="contact.html" class="inline-block border border-gray-300 rounded-md px-5 py-2 text-sm font-normal text-black hover:bg-gray-100 transition">
+            Contact Us
+          </a>
+        </div>
+      </div>
+      <div class="lg:w-1/2 max-w-lg">
+        <img alt="Illustration of a group of people sitting around a table with blue speech bubbles above them representing discussion" class="rounded-lg w-full h-auto object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/4fc8ee7b-a914-40a4-6406-f3a7d20e67a4.jpg" width="600" />
+      </div>
+    </section>
+  </main>
+  <div class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">How It Works</h2>
+            <div class="grid gap-8 md:grid-cols-3">
+                <div class="card bg-white p-6 rounded-lg shadow-md">
+                    <div class="rounded-full bg-blue-100 w-12 h-12 flex items-center justify-center mb-4">
+                        <span class="text-xl font-bold text-blue-600">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Upload Documents</h3>
+                    <p class="text-gray-600 mb-4">
+                        Upload your resume. Our system supports multiple file formats including
+                        PDF, DOCX, and plain text.
+                    </p>
+                </div>
+
+                <div class="card bg-white p-6 rounded-lg shadow-md">
+                    <div class="rounded-full bg-blue-100 w-12 h-12 flex items-center justify-center mb-4">
+                        <span class="text-xl font-bold text-blue-600">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">AI Analysis</h3>
+                    <p class="text-gray-600 mb-4">
+                        Our advanced AI analyzes the documents to identify key skills, requirements, and job responsibilities,
+                        extracting the most relevant information.
+                    </p>
+                </div>
+
+                <div class="card bg-white p-6 rounded-lg shadow-md">
+                    <div class="rounded-full bg-blue-100 w-12 h-12 flex items-center justify-center mb-4">
+                        <span class="text-xl font-bold text-blue-600">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Question Generation</h3>
+                    <p class="text-gray-600 mb-4">
+                        Based on the analysis, the system generates customized interview questions tailored to the specific job
+                        and candidate profile.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Features Section -->
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Key System Features</h2>
+            <div class="grid gap-6 md:grid-cols-2">
+                <div class="feature-item flex gap-4 p-4 hover:bg-gray-50 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon h-6 w-6 text-blue-600 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Multiple Question Types</h3>
+                        <p class="text-gray-600">
+                            Generate technical, behavioral, situational, and competency-based questions to ensure comprehensive
+                            candidate assessment.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature-item flex gap-4 p-4 hover:bg-gray-50 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon h-6 w-6 text-blue-600 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Adjustable Difficulty</h3>
+                        <p class="text-gray-600">
+                            Set the difficulty level from easy to hard to match the candidate's experience level and the position
+                            requirements.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature-item flex gap-4 p-4 hover:bg-gray-50 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon h-6 w-6 text-blue-600 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Answer generation</h3>
+                        <p class="text-gray-600">
+                            Practice answering questions verbally and receive AI-powered feedback on your responses to improve
+                            your interview skills.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature-item flex gap-4 p-4 hover:bg-gray-50 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon h-6 w-6 text-blue-600 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Collaboration Tools</h3>
+                        <p class="text-gray-600">
+                            Share question sets with team members and collaborate on hiring decisions with built-in tools for HR
+                            teams.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature-item flex gap-4 p-4 hover:bg-gray-50 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon h-6 w-6 text-blue-600 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Multi support</h3>
+                        <p class="text-gray-600">
+                            multiple formats including PDF, Word, and TXT for easy sharing and
+                            record-keeping.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature-item flex gap-4 p-4 hover:bg-gray-50 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon h-6 w-6 text-blue-600 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Real-time questions</h3>
+                        <p class="text-gray-600">
+                            Get instant analysis based questions for  interview and improve your performance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technology Section -->
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Our Technology</h2>
+            <div class="grid gap-8 md:grid-cols-2 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="AI technology" 
+                         class="rounded-lg object-cover w-full h-auto shadow-lg">
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Advanced Natural Language Processing</h3>
+                        <p class="text-gray-600">
+                            Our system uses state-of-the-art NLP models to understand job descriptions, analyze resumes, and
+                            generate relevant interview questions.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">questions/answers</h3>
+                        <p class="text-gray-600">
+                            High-accuracy to generate questions and answers  feature, enabling realistic,performance-oriented
+                            interview practice.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Machine Learning</h3>
+                        <p class="text-gray-600">
+                            Our system continuously learns and improves from user interactions, making it more accurate and
+                            helpful over time.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Secure Cloud Infrastructure</h3>
+                        <p class="text-gray-600">
+                            All data is processed and stored securely in the cloud, with enterprise-grade security measures to
+                            protect your information.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Interviews?</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-6">
+                Start generating customized interview questions today and take your interview preparation to the next level.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="features.html" class="px-8 py-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 flex items-center gap-2 justify-center">
+                    Try Question Generator <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+       </div>
+        </div>
+      </div>
+    </section>
+  </main> 
+<title>Footer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+</head>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<body class="bg-white">
+  <footer class="w-full border-t border-gray-200 mt-20">
+    <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center space-x-2 mb-3">
+          <i class="fas fa-file-alt text-blue-600 text-lg"></i>
+          <span class="font-semibold text-black text-base">InterviewAI</span>
+        </div>
+        <p class="text-gray-600 text-sm max-w-xs">
+          Transform your interview process with AI-powered question generation.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-bold text-black text-sm mb-3">PRODUCT</h3>
+        <ul class="text-gray-700 text-sm space-y-1">
+         
+            <li><a href="features.html">Job Description Analysis</a></li>
+              <li><a href="features.html">Question Generator</a></li>
+            <li><a href="features.html">Question Answering</a></li>
+           
+      </div>
+      <div>
+        <h3 class="font-bold text-black text-sm mb-3">COMPANY</h3>
+        <ul class="text-gray-700 text-sm space-y-1">
+         <li><a href="about.html">About</a></li>
+          <li><a href="benefits.html">Benefits</a></li>
+          <li><a href="use-cases.html">Use Cases</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold text-black text-sm mb-3">CONNECT</h3>
+        <ul class="text-gray-700 text-sm space-y-1">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 pb-6 text-center text-gray-500 text-xs select-none">
+      © 2025 InterviewAI. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
+
+
+
+

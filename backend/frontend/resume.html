@@ -1,0 +1,446 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume and Interview Practice</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+</head>
+<body class="bg-[#e8f0fe] text-[#202124] font-sans min-h-screen p-4 sm:p-6 md:p-10">
+    <nav class="sticky top-0 bg-white border-b border-gray-200 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="/" class="flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+              <polyline points="14 2 14 8 20 8" />
+              <path d="M8 13h2" />
+              <path d="M8 17h2" />
+              <path d="M14 13h2" />
+              <path d="M14 17h2" />
+            </svg>
+            <strong class="text-xl font-semibold text-gray-900 select-none">InterviewAI</strong>
+          </a>
+        </div>
+        <div class="flex items-center">
+          <button id="mobile-menu-button" aria-label="Toggle menu" aria-expanded="false" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600 md:hidden">
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <ul id="desktop-menu" class="hidden md:flex md:space-x-6 md:items-center md:text-base md:font-medium">
+            <li><a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Home</a></li>
+            <li><a href="about.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">About</a></li>
+             <li><a href="features.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Features</a></li>
+            <li><a href="benefits.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Benefits</a></li>
+            <li><a href="use-cases.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Use Cases</a></li>
+            <li><a href="faq.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">FAQ</a></li>
+            <li><a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Contact</a></li>
+          </ul>
+          <div class="hidden md:flex md:items-center md:space-x-2 md:ml-6">
+            <a href="signin.html" class="inline-block px-3 py-1.5 border border-blue-600 text-blue-600 rounded-md text-sm font-medium hover:bg-blue-50">Sign In</a>
+            <a href="signup.html" class="inline-block px-3 py-1.5 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200">
+      <ul class="px-2 pt-2 pb-3 space-y-1 text-base font-medium text-gray-700">
+        <li><a href="index.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">Home</a></li>
+        <li><a href="about.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">About</a></li>
+        <li><a href="features.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">Features</a></li>
+        <li><a href="benefits.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">Benefits</a></li>
+        <li><a href="use-cases.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">Use Cases</a></li>
+        <li><a href="resume.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">resume</a></li>
+        <li><a href="faq.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">FAQ</a></li>
+        <li><a href="contact.html" class="block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600">Contact</a></li>
+        <li class="pt-2 flex space-x-2 px-3">
+          <a href="signin.html" class="flex-1 text-center px-3 py-2 border border-blue-600 text-blue-600 rounded-md text-sm font-medium hover:bg-blue-50">Sign In</a>
+          <a href="signup.html" class="flex-1 text-center px-3 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700">Sign Up</a>
+        </li>
+      </ul>
+    </div>
+
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileFeaturesButton = document.getElementById('mobile-features-button');
+    const mobileFeaturesSubmenu = document.getElementById('mobile-features-submenu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+      mobileMenuButton.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('hidden');
+      mobileMenuButton.querySelectorAll('svg').forEach(svg => svg.classList.toggle('hidden'));
+    });
+
+    mobileFeaturesButton.addEventListener('click', () => {
+      const expanded = mobileFeaturesButton.getAttribute('aria-expanded') === 'true' || false;
+      mobileFeaturesButton.setAttribute('aria-expanded', !expanded);
+      mobileFeaturesSubmenu.classList.toggle('hidden');
+    });
+  </script>
+  </nav>
+  <p class="text-[13px] text-[#3c4043] mb-4 max-w-3xl">
+    Upload your resume, get personalized job suggestions, and practice with AI-generated interview questions.
+  </p>
+
+  <section
+    class="bg-white rounded-md border border-[#dadce0] max-w-3xl mb-6 p-4 sm:p-6"
+  >
+    <h2 class="font-semibold text-[14px] text-[#202124] mb-3">Upload Resume</h2>
+    <label
+      for="resume-file"
+      class="block text-[12px] font-semibold text-[#3c4043] mb-1"
+      >Select your resume file</label
+    >
+    <input
+      type="file"
+      id="resume-file"
+      name="resume-file"
+      accept=".pdf,.doc,.docx,.txt"
+      class="w-full border border-[#dadce0] rounded-sm text-[13px] text-[#202124] px-2 py-1 mb-1 focus:outline-none focus:ring-1 focus:ring-[#1a73e8]"
+    />
+    <p class="text-[10px] text-[#5f6368] mb-3">
+      Supported formats: PDF, DOC, DOCX, TXT (max 5MB)
+    </p>
+    <button
+      id="analyze-resume-btn"
+      type="button"
+      class="bg-[#1a73e8] text-white text-[13px] font-semibold px-3 py-1 rounded-sm hover:bg-[#1669c1] transition-colors"
+    >
+      Analyze Resume
+    </button>
+    <div id="extracted-skills-display" class="mt-3 text-[13px] text-[#202124] hidden">
+  <strong>Extracted Skills:</strong>
+  <p id="extracted-skills-list" class="mt-1"></p>
+</div>
+  </section>
+
+  <section
+    class="bg-white rounded-md border border-[#dadce0] max-w-3xl mb-6 p-4 sm:p-6"
+  >
+    <h2 class="font-semibold text-[14px] text-[#202124] mb-3">
+      Generate Interview Questions
+    </h2>
+    <form id="questions-form" class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 mb-3 text-[12px] text-[#3c4043]">
+      <div>
+        <label for="skill" class="block font-semibold mb-1">Skill</label>
+        <input
+          type="text"
+          id="skill"
+          name="skill"
+          placeholder="e.g. Python"
+          class="w-full border border-[#dadce0] rounded-sm text-[13px] text-[#202124] px-2 py-1 focus:outline-none focus:ring-1 focus:ring-[#1a73e8]"
+        />
+      </div>
+      <div>
+        <label for="job-title" class="block font-semibold mb-1">Job Title</label>
+        <input
+          type="text"
+          id="job-title"
+          name="job-title"
+          placeholder="e.g. Data Analyst"
+          class="w-full border border-[#dadce0] rounded-sm text-[13px] text-[#202124] px-2 py-1 focus:outline-none focus:ring-1 focus:ring-[#1a73e8]"
+        />
+      </div>
+    </form>
+
+    <form
+      class="grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-3 mb-3 text-[12px] text-[#3c4043]"
+    >
+      <div>
+        <label for="question-type" class="block font-semibold mb-1"
+          >Question Type</label
+        >
+        <select
+          id="question-type"
+          name="question-type"
+          class="w-full border border-[#dadce0] rounded-sm text-[13px] text-[#202124] px-2 py-1 focus:outline-none focus:ring-1 focus:ring-[#1a73e8]"
+        >
+          <option>Technical</option>
+          <option>Behavioral</option>
+          <option>Situational</option>
+        </select>
+      </div>
+      <div>
+        <label for="difficulty" class="block font-semibold mb-1">Difficulty</label>
+        <select
+          id="difficulty"
+          name="difficulty"
+          class="w-full border border-[#dadce0] rounded-sm text-[13px] text-[#202124] px-2 py-1 focus:outline-none focus:ring-1 focus:ring-[#1a73e8]"
+        >
+          <option>Medium</option>
+          <option>Easy</option>
+          <option>Hard</option>
+        </select>
+      </div>
+      <div>
+        <label for="num-questions" class="block font-semibold mb-1"
+          >Number of Questions</label
+        >
+        <input
+          type="number"
+          id="num-questions"
+          name="num-questions"
+          value="5"
+          min="1"
+          class="w-full border border-[#dadce0] rounded-sm text-[13px] text-[#202124] px-2 py-1 focus:outline-none focus:ring-1 focus:ring-[#1a73e8]"
+        />
+      </div>
+    </form>
+    <button
+      id="generate-questions-btn"
+      type="button"
+      class="bg-[#0f9d58] text-white text-[13px] font-semibold px-3 py-1 rounded-sm hover:bg-[#0b7d43] transition-colors"
+    >
+      Generate Questions
+    </button>
+  </section>
+
+  <section
+    id="questions-section"
+    class="bg-white rounded-md border border-[#dadce0] max-w-3xl mb-6 p-4 sm:p-6 text-[12px] text-[#3c4043]"
+  >
+    <h2 class="font-semibold text-[14px] text-[#202124] mb-3">Generated Questions</h2>
+    <div id="questions-placeholder" class="flex flex-col items-center justify-center py-8">
+      <i
+        class="fas fa-ban text-[#5f6368] text-[28px] mb-3"
+        aria-hidden="true"
+      ></i>
+      <p class="max-w-xs text-center text-[12px] text-[#5f6368]">
+        No questions generated yet. Configure and generate your first set of
+        questions.
+      </p>
+    </div>
+    <div id="questions-container" class="hidden">
+      <div id="questions-list" class="space-y-4"></div>
+      <button
+        id="generate-answers-btn"
+        type="button"
+        class="mt-4 bg-[#1a73e8] text-white text-[13px] font-semibold px-3 py-1 rounded-sm hover:bg-[#1669c1] transition-colors"
+      >
+        Generate Answers
+      </button>
+    </div>
+  </section>
+
+  <section
+    id="answers-section"
+    class="bg-white rounded-md border border-[#dadce0] max-w-3xl p-4 sm:p-6 text-[12px] text-[#3c4043] hidden"
+  >
+    <h2 class="font-semibold text-[14px] text-[#202124] mb-3">Generated Answers</h2>
+    <div id="answers-container" class="space-y-4"></div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const analyzeResumeBtn = document.getElementById('analyze-resume-btn');
+      const generateQuestionsBtn = document.getElementById('generate-questions-btn');
+      const generateAnswersBtn = document.getElementById('generate-answers-btn');
+      const resumeFileInput = document.getElementById('resume-file');
+      const questionsContainer = document.getElementById('questions-container');
+      const questionsPlaceholder = document.getElementById('questions-placeholder');
+      const questionsList = document.getElementById('questions-list');
+      const answersSection = document.getElementById('answers-section');
+      const answersContainer = document.getElementById('answers-container');
+      
+      let currentQuestions = [];
+      
+      // Handle Analyze Resume button click
+      analyzeResumeBtn.addEventListener('click', function() {
+        const file = resumeFileInput.files[0];
+        if (!file) {
+          alert('Please select a resume file first');
+          return;
+        }
+        
+        const formData = new FormData();
+        formData.append('resume', file);
+        
+        // Show loading state
+        analyzeResumeBtn.disabled = true;
+        analyzeResumeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Analyzing...';
+        
+        fetch('/api/analyze-resume', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+         if (data.success) {
+  const skills = data.analysis.skills || [];
+  alert('Resume analyzed successfully!');
+  if (skills.length > 0) {
+    document.getElementById('skill').value = skills.join(', ');
+    document.getElementById('extracted-skills-list').textContent = skills.join(', ');
+    document.getElementById('extracted-skills-display').classList.remove('hidden');
+  } else {
+    document.getElementById('extracted-skills-display').classList.add('hidden');
+  }
+}
+            else {
+                alert('Error analyzing resume: ' + (data.error || 'Unknown error'));
+            }
+            })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('An error occurred while analyzing the resume');
+        })
+        .finally(() => {
+          analyzeResumeBtn.disabled = false;
+          analyzeResumeBtn.textContent = 'Analyze Resume';
+        });
+      });
+      
+      // Handle Generate Questions button click
+      generateQuestionsBtn.addEventListener('click', function() {
+        const file = resumeFileInput.files[0];
+        const jobTitle = document.getElementById('job-title').value;
+        const skill = document.getElementById('skill').value;
+        const questionType = document.getElementById('question-type').value;
+        const difficulty = document.getElementById('difficulty').value;
+        const numQuestions = document.getElementById('num-questions').value;
+        
+        if (!jobTitle || !skill) {
+          alert('Please fill in both Job Title and Skill fields');
+          return;
+        }
+        
+        const formData = new FormData();
+        if (file) formData.append('resume', file);
+        formData.append('jobTitle', jobTitle);
+        formData.append('skill', skill);
+        formData.append('questionType', questionType);
+        formData.append('difficulty', difficulty);
+        formData.append('numQuestions', numQuestions);
+        formData.append('email', localStorage.getItem('userEmail') || '');
+        
+        // Show loading state
+        generateQuestionsBtn.disabled = true;
+        generateQuestionsBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
+        
+        fetch('/api/generate-questions', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            currentQuestions = data.questions;
+            displayQuestions(data.questions);
+          } else {
+            alert('Error generating questions: ' + (data.error || 'Unknown error'));
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('An error occurred while generating questions');
+        })
+        .finally(() => {
+          generateQuestionsBtn.disabled = false;
+          generateQuestionsBtn.textContent = 'Generate Questions';
+        });
+      });
+      
+      // Handle Generate Answers button click
+      generateAnswersBtn.addEventListener('click', function() {
+        if (currentQuestions.length === 0) {
+          alert('No questions available to generate answers for');
+          return;
+        }
+        
+        const file = resumeFileInput.files[0];
+        const formData = new FormData();
+        if (file) formData.append('resume', file);
+        formData.append('questions', JSON.stringify(currentQuestions));
+        
+        // Show loading state
+        generateAnswersBtn.disabled = true;
+        generateAnswersBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating Answers...';
+        
+        fetch('/api/generate-answers', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            displayAnswers(data.answers);
+          } else {
+            alert('Error generating answers: ' + (data.error || 'Unknown error'));
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('An error occurred while generating answers');
+        })
+        .finally(() => {
+          generateAnswersBtn.disabled = false;
+          generateAnswersBtn.textContent = 'Generate Answers';
+        });
+      });
+      
+      // Display generated questions
+      function displayQuestions(questions) {
+        questionsList.innerHTML = '';
+        
+        questions.forEach((question, index) => {
+          const questionElement = document.createElement('div');
+          questionElement.className = 'border-b border-[#dadce0] pb-3';
+          questionElement.innerHTML = `
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="font-medium text-[#202124] mb-1">${index + 1}. ${question.question}</h3>
+                <div class="flex gap-2 text-[11px]">
+                  <span class="bg-[#e8f0fe] text-[#1a73e8] px-2 py-0.5 rounded">${question.type}</span>
+                  <span class="bg-[#e6f4ea] text-[#0f9d58] px-2 py-0.5 rounded">${question.difficulty}</span>
+                </div>
+              </div>
+            </div>
+          `;
+          questionsList.appendChild(questionElement);
+        });
+        
+        questionsPlaceholder.classList.add('hidden');
+        questionsContainer.classList.remove('hidden');
+        answersSection.classList.add('hidden');
+      }
+      
+      // Display generated answers
+      function displayAnswers(answers) {
+        answersContainer.innerHTML = '';
+        
+        answers.forEach((answer, index) => {
+          const answerElement = document.createElement('div');
+          answerElement.className = 'border-b border-[#dadce0] pb-4';
+          answerElement.innerHTML = `
+            <div>
+              <h3 class="font-medium text-[#202124] mb-1">${index + 1}. ${answer.question}</h3>
+              <div class="flex gap-2 text-[11px] mb-2">
+                <span class="bg-[#e8f0fe] text-[#1a73e8] px-2 py-0.5 rounded">${answer.type}</span>
+                <span class="bg-[#e6f4ea] text-[#0f9d58] px-2 py-0.5 rounded">${answer.difficulty}</span>
+              </div>
+              <div class="bg-[#f8f9fa] p-3 rounded text-[13px]">
+                <p class="whitespace-pre-line">${answer.answer}</p>
+              </div>
+            </div>
+          `;
+          answersContainer.appendChild(answerElement);
+        });
+        
+        answersSection.classList.remove('hidden');
+        // Scroll to answers section
+        answersSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  </script>
+</body>
+</html>
